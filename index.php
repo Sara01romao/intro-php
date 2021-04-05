@@ -1,3 +1,10 @@
+<?php
+
+session_start();//inicia a sessão, deve vir sempre antes 
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +17,21 @@
 <p>FORMULÁRIO PARA iNSCRIÇÃO DE COMPETIDORES</p>
 
   <form action="script.php" method="post">
+
+      <?php 
+
+          $msgDeSucesso = isset($_SESSION['msg-de-sucesso']) ? $_SESSION['msg-de-sucesso'] : '';
+          if(!empty($msgDeSucesso)){
+            echo $msgDeSucesso;
+          };//verifica se a variavel foi inicializada msg de sucesso
+
+          
+
+          $msgDeErro = isset($_SESSION['msg-de-erro']) ? $_SESSION['msg-de-erro'] : '';
+          if(!empty($msgDeErro)){
+            echo $msgDeErro;
+          }; //verifica se a variavel foi inicializada msg de erro
+      ?>
 
       <label for="">Your name: </label>
       <input type="text" name='name'>
