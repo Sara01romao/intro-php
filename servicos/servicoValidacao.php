@@ -6,7 +6,7 @@
 
 function validaNome(string $nome): boot{
   if(empty($name)){
-    $_SESSION['msg-de-erro']= 'Informe o nome';//array associativo, no caso a msg de erro
+    setarMensagemErro(mensagem: 'Informe o nome');//array associativo, no caso a msg de erro
   //  header('Location: index.php');//voltar para index
   
    return false;
@@ -14,14 +14,14 @@ function validaNome(string $nome): boot{
   
   
   else if(strlen($name)<3){
-    $_SESSION['msg-de-erro']= 'O nome deve ter mais de 3 caracteres';
+    setarMensagemErro(mensagem:  'O nome deve ter mais de 3 caracteres');
     // header('Location: index.php');
     return false;
   }//stelen: conta a quantidade de caracter que a string tem 
   
   else if(strlen($name)>10){
     
-    $_SESSION['msg-de-erro']= 'Nome é muito extenso';
+    setarMensagemErro(mensagem: 'Nome é muito extenso';
     // header('Location: index.php');
     return false;
   }//controla a quantidade de caracteres da string
@@ -37,7 +37,7 @@ function validaIdade(string $idade) : bool{
     /* echo 'Infome o numero da idade';
      return;*/
    
-     $_SESSION['msg-de-erro']= 'Infome o numero da idade';//array associativo, no caso a msg de erro
+     setarMensagemErro(mensagem:  'Infome o numero da idade';//array associativo, no caso a msg de erro
     // header('Location: index.php');
    return;
    
